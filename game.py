@@ -9,16 +9,24 @@ def determine_winner(choice1, choice2):
     """
 
     if choice1 == choice2:
-        return None # the outcome is a tie
+        winner = None # the outcome is a tie
     else:
-        #selections = [choice1, choice2].sort()
-#
-        #if selections == ["rock", "rock"] or :
-        #    winner = None
-        #elif selections == ["rock", "rock"]::
-        #    pass
-        return "rock"
+        choices = [choice1, choice2]
+        choices.sort() # FYI: this is mutating
 
+        #print("CHOICES:", choices)
+        #breakpoint()
+
+        if choices == ["paper", "rock"]:
+            winner = "paper"
+        elif choices == ["paper", "scissors"]:
+            winner = "scissors"
+        elif choices == ["rock", "scissors"]:
+            winner = "rock"
+        else:
+            raise ValueError("OOPS, SOMETHING WENT WRONG")
+
+    return winner
 
 
 if __name__ == "__main__":
