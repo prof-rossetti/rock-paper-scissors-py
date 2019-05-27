@@ -7,7 +7,19 @@ def determine_winner(choice1, choice2):
     Returns the winning choice, or None if there is a tie.
     Example: determine_winner("rock", "paper")
     """
-    return "rock"
+
+    if choice1 == choice2:
+        return None # the outcome is a tie
+    else:
+        #selections = [choice1, choice2].sort()
+#
+        #if selections == ["rock", "rock"] or :
+        #    winner = None
+        #elif selections == ["rock", "rock"]::
+        #    pass
+        return "rock"
+
+
 
 if __name__ == "__main__":
 
