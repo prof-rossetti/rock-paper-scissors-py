@@ -6,6 +6,7 @@ A basic game written in Python.
 
   + Anaconda 3.7
   + Python 3.7
+  + Pip
 
 ## Installation
 
@@ -25,7 +26,7 @@ cd rock-paper-scissors-py
 
 ## Setup
 
-Either activate the "base" Anaconda virtual environment, or optionally create and activate a new Anaconda virtual environment:
+Create and activate a new Anaconda virtual environment:
 
 ```sh
 conda create -n game-env python=3.7 # first time only
@@ -38,6 +39,20 @@ Play the game:
 
 ```sh
 python game.py
+```
+
+## Testing
+
+Install pytest (first time only):
+
+```sh
+pip install pytest
+```
+
+Run tests:
+
+```sh
+pytest
 ```
 
 ## [License](/LICENSE.md)
