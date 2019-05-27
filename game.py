@@ -1,8 +1,13 @@
 
 import random
 
-def determine_winner(user_choice, computer_choice):
-    return "THE COMPUTER" # TODO: determine which player is the winner
+def determine_winner(choice1, choice2):
+    """
+    Determines the winning choice between two choices from selectable options: "rock", "paper", or "scissors".
+    Returns the winning choice, or None if there is a tie.
+    Example: determine_winner("rock", "paper")
+    """
+    return "rock"
 
 if __name__ == "__main__":
 
