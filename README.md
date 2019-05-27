@@ -11,13 +11,13 @@ A basic game written in Python.
 
 Fork the repository from [GitHub source](https://github.com/prof-rossetti/rock-paper-scissors-py).
 
-Then use GitHub Desktop (or Git Bash, see command below) to "clone" or download your fork onto your local computer:
+Then use GitHub Desktop or the command-line to "clone" or download your fork onto your local computer:
 
 ```sh
 git clone https://github.com/YOUR_USERNAME/rock-paper-scissors-py.git # this is the HTTP address, but you could alternatively use the SSH address
 ```
 
-Navigate into your local repo from the command-line (Terminal or Git Bash)before running any of the other commands below:
+Navigate into your local repo from the command-line before running any of the other commands below:
 
 ```sh
 cd rock-paper-scissors-py
