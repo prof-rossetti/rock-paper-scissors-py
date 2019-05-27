@@ -1,23 +1,59 @@
 
 import random
 
-print("-------------------")
-print("LAUNCHING THE GAME...")
-print("-------------------")
+def determine_winner(choice1, choice2):
+    """
+    Determines the winning choice between two choices from selectable options: "rock", "paper", or "scissors".
+    Returns the winning choice, or None if there is a tie.
+    Example: determine_winner("rock", "paper")
+    """
 
-options = ["rock", "paper", "scissors"]
+    if choice1 == choice2:
+        winner = None # the outcome is a tie
+    else:
+        choices = [choice1, choice2]
+        choices.sort() # FYI: this is mutating
 
-user_choice = input("Please choose either 'rock', 'paper', or 'scissors': ")
+        if choices == ["paper", "rock"]:
+            winner = "paper"
+        elif choices == ["paper", "scissors"]:
+            winner = "scissors"
+        elif choices == ["rock", "scissors"]:
+            winner = "rock"
+        else:
+            raise ValueError("OOPS, SOMETHING WENT WRONG")
 
-if user_choice in options:
-    print("YOU CHOSE:", user_choice.upper())
-else:
-    error_message = "Expecting one of: 'rock', 'paper', or 'scissors' (lower case, without the quotation marks). Please try again."
-    #raise ValueError(error_message)
-    print(error_message)
-    exit()
+    return winner
 
-computer_choice = random.choice(options)
-print("THE COMPUTER CHOSE:", computer_choice.upper())
 
-# winner = determine_winner(user_choice, computer_choice)
+if __name__ == "__main__":
+
+    print("-------------------")
+    print("Launching the game...")
+    print("-------------------")
+
+    options = ["rock", "paper", "scissors"]
+
+    user_choice = input("Please choose either 'rock', 'paper', or 'scissors': ")
+
+    if user_choice in options:
+        print("You chose:", user_choice)
+    else:
+        print("Expecting one of: 'rock', 'paper', or 'scissors' (lower case, without the quotation marks). Please try again.")
+        exit()
+
+    computer_choice = random.choice(options)
+    print("The computer chose:", computer_choice)
+    print("-------------------")
+
+    winning_choice = determine_winner(user_choice, computer_choice)
+
+    if winning_choice:
+        if winning_choice == user_choice:
+            print("Congratulations, you won!")
+        elif winning_choice == computer_choice:
+            print("Oh, the computer won. It's ok.")
+    else:
+        print("Oh, it's a tie.")
+
+    print("Thanks for playing. Please play again!")
