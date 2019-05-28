@@ -61,7 +61,7 @@ Play the game from a `tkinter` GUI:
 python app/tk_game.py
 ```
 
-![a screenshot of gameplay](/img/tk_game_screenshot.png)
+![a screenshot of gameplay](/img/tk_game_screenshot_with_img.png)
 
 ### `PySimpleGUI` Game
 
