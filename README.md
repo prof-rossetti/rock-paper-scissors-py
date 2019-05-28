@@ -1,5 +1,7 @@
 # Rock-Paper-Scissors (Python)
 
+[![Build Status](https://travis-ci.com/prof-rossetti/rock-paper-scissors-py.svg?branch=master)](https://travis-ci.com/prof-rossetti/rock-paper-scissors-py)
+
 A basic game written in Python.
 
 ## Prerequisites
