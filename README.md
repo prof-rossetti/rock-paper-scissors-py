@@ -41,11 +41,17 @@ pip install PySimpleGUI
 
 ## Usage
 
+### CLI Version
+
 Play the game from the command-line:
 
 ```sh
 python app/game.py
 ```
+
+![a screenshot of gameplay](/img/game_screenshot.png)
+
+### `tkinter` GUI Version
 
 Play the game from a `tkinter` GUI:
 
@@ -53,11 +59,18 @@ Play the game from a `tkinter` GUI:
 python app/tk_game.py
 ```
 
+![a screenshot of gameplay](/img/tk_game_screenshot.png)
+
+### `PySimpleGUI` Version
+
 Play the game from a `PySimpleGUI` GUI:
 
 ```sh
 python app/sg_game.py
 ```
+
+![a screenshot of gameplay](/img/sg_game_screenshot.png)
+
 
 ## Testing
 
