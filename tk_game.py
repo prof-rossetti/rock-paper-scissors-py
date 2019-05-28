@@ -3,7 +3,7 @@
 import tkinter
 import tkinter.messagebox # h/t: https://stackoverflow.com/a/38181986/670433
 
-from game import random_choice, determine_winner
+from game import random_choice, determine_winner, WIN_MESSAGE, LOSE_MESSAGE, TIE_MESSAGE
 
 window = tkinter.Tk()
 
@@ -16,32 +16,28 @@ my_select.insert(2, "paper")
 my_select.insert(3, "scissors")
 
 def handle_button_click():
-    user_choice = my_select.get(my_select.curselection())
 
+    user_choice = my_select.get(my_select.curselection())
     computer_choice = random_choice()
+    winning_choice = determine_winner(user_choice, computer_choice)
 
     message = "-------------------"
     message += f"\nYou chose: {user_choice}"
     message += f"\nThe computer chose: {computer_choice}"
-
-    #winning_choice = determine_winner(user_choice, computer_choice)
-    #if winning_choice:
-    #    if winning_choice == user_choice:
-    #        print("Congratulations, you won!")
-    #    elif winning_choice == computer_choice:
-    #        print("Oh, the computer won. It's ok.")
-    #else:
-    #    print("Oh, it's a tie.")
-
     message += "\n-------------------"
-    heading = "Congratulations"
-    message += "\nYou won!"
+
+    if winning_choice:
+        if winning_choice == user_choice:
+            message += f"\n{WIN_MESSAGE}"
+        elif winning_choice == computer_choice:
+            message += f"\n{LOSE_MESSAGE}"
+    else:
+        message += f"\n{TIE_MESSAGE}"
 
     message += "\n-------------------"
     message += "\nThanks for playing. Please play again!"
 
-    tkinter.messagebox.showinfo(heading, message)
-
+    tkinter.messagebox.showinfo("Results...", message)
 
 my_button = tkinter.Button(text="Submit", command=handle_button_click)
 
