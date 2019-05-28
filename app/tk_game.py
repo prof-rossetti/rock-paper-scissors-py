@@ -15,7 +15,7 @@ window.title(GUI_WINDOW_TITLE)
 
 
 
-img_filepath = os.path.join(os.path.dirname(__file__), "..", "img", "rps_options.jpg")
+img_filepath = os.path.join(os.path.dirname(__file__), "..", "img", "rps_winners.jpg")
 
 #window.tk.call("wm", "iconphoto", window._w, PhotoImage(file=img_filepath)) # h/t https://stackoverflow.com/a/31816987/670433
 #> _tkinter.TclError: couldn't recognize data in image file

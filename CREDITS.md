@@ -9,6 +9,7 @@ Displaying Images:
 
   + https://pillow.readthedocs.io/en/latest/reference/Image.html
   + https://stackoverflow.com/questions/48492727/tkinter-tclerror-couldnt-recognize-data-in-image-file
+  + https://stackoverflow.com/questions/31815007/change-icon-for-tkinter-messagebox
 
 ## PySimpleGUI
 
