@@ -1,4 +1,10 @@
-from game import determine_winner
+from app.game import random_choice, determine_winner
+
+def test_random_choice():
+    assert random_choice() in ["rock", "paper", "scissors"]
+
+    custom_options = [1, 5, 7]
+    assert random_choice(custom_options) in custom_options
 
 def test_determination_of_the_winner():
     assert determine_winner("rock", "rock") == None

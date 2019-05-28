@@ -1,10 +1,17 @@
 
 import random
 
+WIN_MESSAGE = "Congratulations, you won!"
+LOSE_MESSAGE = "Oh, the computer won. It's ok."
+TIE_MESSAGE = "Oh, it's a tie."
+
+def random_choice(options=["rock", "paper", "scissors"]):
+    return random.choice(options)
+
 def determine_winner(choice1, choice2):
     """
     Determines the winning choice between two choices from selectable options: "rock", "paper", or "scissors".
-    Returns the winning choice, or None if there is a tie.
+    Returns the winning choice (e.g. "paper"), or None if there is a tie.
     Example: determine_winner("rock", "paper")
     """
 
@@ -25,7 +32,6 @@ def determine_winner(choice1, choice2):
 
     return winner
 
-
 if __name__ == "__main__":
 
     print("-------------------")
@@ -42,7 +48,7 @@ if __name__ == "__main__":
         print("Expecting one of: 'rock', 'paper', or 'scissors' (lower case, without the quotation marks). Please try again.")
         exit()
 
-    computer_choice = random.choice(options)
+    computer_choice = random_choice(options)
     print("The computer chose:", computer_choice)
     print("-------------------")
 
@@ -50,10 +56,10 @@ if __name__ == "__main__":
 
     if winning_choice:
         if winning_choice == user_choice:
-            print("Congratulations, you won!")
+            print(WIN_MESSAGE)
         elif winning_choice == computer_choice:
-            print("Oh, the computer won. It's ok.")
+            print(LOSE_MESSAGE)
     else:
-        print("Oh, it's a tie.")
+        print(TIE_MESSAGE)
 
     print("Thanks for playing. Please play again!")

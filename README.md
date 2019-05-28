@@ -35,10 +35,16 @@ conda activate game-env
 
 ## Usage
 
-Play the game:
+Play the game from the command-line:
 
 ```sh
-python game.py
+python app/game.py
+```
+
+Play the game from a `tkinter` GUI:
+
+```sh
+python app/tk_game.py
 ```
 
 ## Testing
