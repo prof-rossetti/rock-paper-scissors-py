@@ -1,15 +1,15 @@
-# adapted from notes: https://github.com/prof-rossetti/nyu-info-2335-201905/blob/master/notes/python/packages/tkinter.md
 
 import tkinter
-import tkinter.messagebox # h/t: https://stackoverflow.com/a/38181986/670433
+import tkinter.messagebox
 
-from game import random_choice, determine_winner, WIN_MESSAGE, LOSE_MESSAGE, TIE_MESSAGE
+from game import *
 
 window = tkinter.Tk()
+window.title(GUI_WINDOW_TITLE)
 
-my_message = tkinter.Message(text="Hi. Welcome to my Rock-Paper-Scissors game!", width=1000)
+my_message = tkinter.Message(text=WELCOME_MESSAGE, width=1000)
 
-my_select_label = tkinter.Label(text="Please choose an option from the dropdown:")
+my_select_label = tkinter.Label(text=GUI_PROMPT_MESSAGE)
 my_select = tkinter.Listbox()
 my_select.insert(1, "rock")
 my_select.insert(2, "paper")
@@ -41,6 +41,8 @@ def handle_button_click():
 
 my_button = tkinter.Button(text="Submit", command=handle_button_click)
 
+my_message.pack()
+my_select_label.pack()
 my_select.pack()
 my_button.pack()
 window.mainloop()

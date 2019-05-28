@@ -1,32 +1,37 @@
-# credits:
-#  + https://github.com/prof-rossetti/nyu-info-2335-201905/blob/master/notes/python/packages/pysimplegui.md
-#  + https://pysimplegui.readthedocs.io/en/latest/tutorial/
-#  + https://github.com/PySimpleGUI/PySimpleGUI/blob/master/PySimpleGUI.py#L775-L876
 
 import PySimpleGUI as sg
 
-#from game import random_choice, determine_winner, WIN_MESSAGE, LOSE_MESSAGE, TIE_MESSAGE
-
-#sg.Popup("Hello From PySimpleGUI!", "This is the shortest GUI program ever!")
+from game import *
 
 layout = [
-    [
-        sg.Text("Please choose an option from the dropdown:")
-    ],
-    [
-        #sg.Listbox(values=("rock", "paper", "scissors"), size=(30, 3))
-        sg.Listbox(values=("rock", "paper", "scissors"), size=(30, 3), select_mode="single")
-    ],
-    [
-        sg.Submit()
-    ]
+    [ sg.Text(GUI_PROMPT_MESSAGE) ],
+    [ sg.Listbox(values=("rock", "paper", "scissors"), size=(30, 3), select_mode="single") ],
+    [ sg.Submit() ]
 ]
 
-window = sg.Window("My first GUI").Layout(layout)
+
+window = sg.Window(GUI_WINDOW_TITLE).Layout(layout)
 
 button, values = window.Read()
 
-#print(values) #> {0: ['scissors']}
-#print(values[0]) #> ['scissors']
+user_choice = values[0][0] #> "scissors"
+computer_choice = random_choice()
+winning_choice = determine_winner(user_choice, computer_choice)
 
-print("USER SELECTION:", values[0][0])
+message = "-------------------"
+message += f"\nYou chose: {user_choice}"
+message += f"\nThe computer chose: {computer_choice}"
+message += "\n-------------------"
+
+if winning_choice:
+    if winning_choice == user_choice:
+        message += f"\n{WIN_MESSAGE}"
+    elif winning_choice == computer_choice:
+        message += f"\n{LOSE_MESSAGE}"
+else:
+    message += f"\n{TIE_MESSAGE}"
+
+message += "\n-------------------"
+message += "\nThanks for playing. Please play again!"
+
+sg.Popup("Results...", message)
