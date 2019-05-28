@@ -1,4 +1,4 @@
-from game import random_choice, determine_winner
+from app.game import random_choice, determine_winner
 
 def test_random_choice():
     assert random_choice() in ["rock", "paper", "scissors"]
