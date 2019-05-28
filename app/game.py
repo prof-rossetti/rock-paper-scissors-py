@@ -1,6 +1,10 @@
 
 import random
 
+GUI_WINDOW_TITLE = "Rock-Paper-Scissors"
+WELCOME_MESSAGE = "Hi. Welcome to my Rock-Paper-Scissors game!"
+GUI_PROMPT_MESSAGE = "Please choose an option from the dropdown:"
+
 WIN_MESSAGE = "Congratulations, you won!"
 LOSE_MESSAGE = "Oh, the computer won. It's ok."
 TIE_MESSAGE = "Oh, it's a tie."

@@ -1,5 +1,7 @@
 # Rock-Paper-Scissors (Python)
 
+[![Build Status](https://travis-ci.com/prof-rossetti/rock-paper-scissors-py.svg?branch=master)](https://travis-ci.com/prof-rossetti/rock-paper-scissors-py)
+
 A basic game written in Python.
 
 ## Prerequisites
@@ -33,7 +35,15 @@ conda create -n game-env python=3.7 # first time only
 conda activate game-env
 ```
 
+The only game which requires package installation is the `PySimpleGUI` Game, so if you want to play that one, you'll need to install the package first:
+
+```sh
+pip install PySimpleGUI
+```
+
 ## Usage
+
+### CLI Game
 
 Play the game from the command-line:
 
@@ -41,11 +51,28 @@ Play the game from the command-line:
 python app/game.py
 ```
 
+![a screenshot of gameplay](/img/game_screenshot.png)
+
+### `tkinter` GUI Game
+
 Play the game from a `tkinter` GUI:
 
 ```sh
 python app/tk_game.py
 ```
+
+![a screenshot of gameplay](/img/tk_game_screenshot.png)
+
+### `PySimpleGUI` Game
+
+Play the game from a `PySimpleGUI` GUI:
+
+```sh
+python app/sg_game.py
+```
+
+![a screenshot of gameplay](/img/sg_game_screenshot.png)
+
 
 ## Testing
 
