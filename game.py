@@ -1,6 +1,9 @@
 
 import random
 
+def random_choice(options=["rock", "paper", "scissors"]):
+    return random.choice(options)
+
 def determine_winner(choice1, choice2):
     """
     Determines the winning choice between two choices from selectable options: "rock", "paper", or "scissors".
@@ -25,7 +28,6 @@ def determine_winner(choice1, choice2):
 
     return winner
 
-
 if __name__ == "__main__":
 
     #
@@ -46,7 +48,7 @@ if __name__ == "__main__":
         print("Expecting one of: 'rock', 'paper', or 'scissors' (lower case, without the quotation marks). Please try again.")
         exit()
 
-    computer_choice = random.choice(options)
+    computer_choice = random_choice(options)
     print("The computer chose:", computer_choice)
     print("-------------------")
 
