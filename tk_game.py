@@ -1,8 +1,11 @@
 # adapted from notes: https://github.com/prof-rossetti/nyu-info-2335-201905/blob/master/notes/python/packages/tkinter.md
 
+import random
+
 import tkinter
-#import tkMessageBox #> ModuleNotFoundError: No module named 'tkMessageBox'
 import tkinter.messagebox # h/t: https://stackoverflow.com/a/38181986/670433
+
+from game import determine_winner
 
 window = tkinter.Tk()
 
@@ -15,12 +18,25 @@ my_select.insert(2, "paper")
 my_select.insert(3, "scissors")
 
 def handle_button_click():
+    user_choice = my_select.get(my_select.curselection())
     print("------------------------------")
-    print("You chose:", my_select.get(my_select.curselection()))
-    #tkMessageBox.showinfo("Congratulations", "You won!")
-    tkinter.messagebox.showinfo("Congratulations", "You won!")
+    print("You chose:", user_choice)
 
-my_button = tkinter.Button(text="Click Me", command=handle_button_click)
+    options = ["rock", "paper", "scissors"]
+    computer_choice = random.choice(options)
+    print("------------------------------")
+    print("The computer chose:", computer_choice)
+
+
+    result_message = f"You chose: {user_choice} \n"
+    result_message += f"The computer chose: {computer_choice} \n"
+
+    #winning_choice = determine_winner(user_choice, computer_choice)
+    result_message += "You won!"
+
+    tkinter.messagebox.showinfo("Congratulations", result_message)
+
+my_button = tkinter.Button(text="Submit", command=handle_button_click)
 
 my_select.pack()
 my_button.pack()
