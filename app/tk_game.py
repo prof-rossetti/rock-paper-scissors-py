@@ -1,5 +1,6 @@
 import os
-from tkinter import * # provides 'PhotoImage'
+#from tkinter import * # provides 'PhotoImage'
+import tkinter
 import tkinter.messagebox
 from PIL import Image, ImageTk
 
@@ -11,20 +12,22 @@ window.title(GUI_WINDOW_TITLE)
 
 
 
+
+
+
 img_filepath = os.path.join(os.path.dirname(__file__), "..", "img", "rps_options.jpg")
 
 #window.tk.call("wm", "iconphoto", window._w, PhotoImage(file=img_filepath)) # h/t https://stackoverflow.com/a/31816987/670433
 #> _tkinter.TclError: couldn't recognize data in image file
 
-label = Label(window)
-img = Image.open(img_filepath)
-label.img = ImageTk.PhotoImage(img)
-label['image'] = label.img
+#label = Label(window)
+#img = Image.open(img_filepath)
+#label.img = ImageTk.PhotoImage(img)
+#label['image'] = label.img
+#label.pack()
 
-label.pack()
 
-
-#window.tk.call("wm", "iconphoto", window._w, PhotoImage(file=img_filepath)) # h/t https://stackoverflow.com/a/31816987/670433
+window.tk.call("wm", "iconphoto", window._w, ImageTk.PhotoImage(file=img_filepath)) # h/t https://stackoverflow.com/a/31816987/670433
 
 
 
