@@ -33,6 +33,12 @@ conda create -n game-env python=3.7 # first time only
 conda activate game-env
 ```
 
+The "game.py" and "tk_game.py" files don't require any third-party packages, but if you plan on playing the "app/sg_game.py" file, you'll need to first install the `PySimpleGUI` package:
+
+```sh
+pip install PySimpleGUI
+```
+
 ## Usage
 
 Play the game from the command-line:
