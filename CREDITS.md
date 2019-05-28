@@ -2,9 +2,13 @@
 
 ## Tkinter
 
-
   + https://stackoverflow.com/a/38181986/670433
   + https://github.com/prof-rossetti/nyu-info-2335-201905/blob/master/notes/python/packages/tkinter.md
+
+Displaying Images:
+
+  + https://pillow.readthedocs.io/en/latest/reference/Image.html
+  + https://stackoverflow.com/questions/48492727/tkinter-tclerror-couldnt-recognize-data-in-image-file
 
 ## PySimpleGUI
 

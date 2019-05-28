@@ -1,17 +1,35 @@
 import os
-
-from tkinter import * # fixes name 'PhotoImage' is not defined
+from tkinter import * # provides 'PhotoImage'
 import tkinter.messagebox
+from PIL import Image, ImageTk
 
 from game import *
 
-img_filepath = os.path.join(os.path.dirname(__file__), "..", "img", "rps_options.jpg")
-print(os.path.isfile(img_filepath))
-
 window = tkinter.Tk()
 window.title(GUI_WINDOW_TITLE)
-window.tk.call("wm", "iconphoto", window._w, PhotoImage(file=img_filepath)) # h/t https://stackoverflow.com/a/31816987/670433
+
+
+
+
+img_filepath = os.path.join(os.path.dirname(__file__), "..", "img", "rps_options.jpg")
+
+#window.tk.call("wm", "iconphoto", window._w, PhotoImage(file=img_filepath)) # h/t https://stackoverflow.com/a/31816987/670433
 #> _tkinter.TclError: couldn't recognize data in image file
+
+label = Label(window)
+img = Image.open(img_filepath)
+label.img = ImageTk.PhotoImage(img)
+label['image'] = label.img
+
+label.pack()
+
+
+#window.tk.call("wm", "iconphoto", window._w, PhotoImage(file=img_filepath)) # h/t https://stackoverflow.com/a/31816987/670433
+
+
+
+
+
 
 my_message = tkinter.Message(text=WELCOME_MESSAGE, width=1000)
 

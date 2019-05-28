@@ -38,7 +38,7 @@ conda activate game-env
 The only game which requires package installation is the `PySimpleGUI` Game, so if you want to play that one, you'll need to install the package first:
 
 ```sh
-pip install PySimpleGUI
+pip install PySimpleGUI pillow
 ```
 
 ## Usage
