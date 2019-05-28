@@ -47,6 +47,12 @@ Play the game from a `tkinter` GUI:
 python app/tk_game.py
 ```
 
+Play the game from a `PySimpleGUI` GUI:
+
+```sh
+python app/sg_game.py
+```
+
 ## Testing
 
 Install pytest (first time only):
