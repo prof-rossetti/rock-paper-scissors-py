@@ -4,7 +4,7 @@ import random
 def determine_winner(choice1, choice2):
     """
     Determines the winning choice between two choices from selectable options: "rock", "paper", or "scissors".
-    Returns the winning choice, or None if there is a tie.
+    Returns the winning choice (e.g. "paper"), or None if there is a tie.
     Example: determine_winner("rock", "paper")
     """
 
@@ -28,6 +28,10 @@ def determine_winner(choice1, choice2):
 
 if __name__ == "__main__":
 
+    #
+    # CAPTURE INPUTS
+    #
+
     print("-------------------")
     print("Launching the game...")
     print("-------------------")
@@ -46,7 +50,15 @@ if __name__ == "__main__":
     print("The computer chose:", computer_choice)
     print("-------------------")
 
+    #
+    # PROCESS INPUTS INTO OUTPUTS
+    #
+
     winning_choice = determine_winner(user_choice, computer_choice)
+
+    #
+    # DISPLAY OUTPUTS
+    #
 
     if winning_choice:
         if winning_choice == user_choice:
