@@ -42,7 +42,7 @@ def determine_winner(choice1, choice2):
         },
         "paper":{
             "rock": "paper",
-            "paper": None, # represents a tie
+            "paper": "OOPS", # represents a tie
             "scissors": "scissors",
         },
         "scissors":{
